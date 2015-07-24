@@ -137,7 +137,7 @@ sample code bearing this copyright.
 
 OneWire::OneWire(uint16_t pin)
 {
-    pinMode(pin, INPUT);
+    pinMode(pin, INPUT_PULLUP);
     _pin = pin;
 }
 // Perform the onewire reset function.  We will wait up to 250uS for

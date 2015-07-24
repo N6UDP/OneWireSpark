@@ -80,7 +80,7 @@ private:
 
       GPIO_InitStructure.GPIO_Pin = gpio_pin;
       GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-      PIN_MAP[_pin].pin_mode = INPUT;
+      PIN_MAP[_pin].pin_mode = INPUT_PULLUP;
       GPIO_Init(gpio_port, &GPIO_InitStructure);
     }
 
@@ -108,7 +108,7 @@ private:
     inline void pinModeFastInput(void){
       // This could probably be speed up by digging a little deeper past
       // the HAL_Pin_Mode function.
-      HAL_Pin_Mode(_pin, INPUT);
+      HAL_Pin_Mode(_pin, INPUT_PULLUP);
     }
 
     inline uint8_t digitalReadFast(void){
